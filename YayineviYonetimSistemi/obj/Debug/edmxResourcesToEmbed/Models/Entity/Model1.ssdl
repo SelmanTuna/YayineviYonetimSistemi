@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Db_YayineviYonetimiModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="kitapID" />
+    </Key>
+    <Property Name="kitapID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Baslik" Type="varchar" MaxLength="50" />
+    <Property Name="Fiyat" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="ISBN" Type="int" />
+    <Property Name="yayineviID" Type="int" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="Yayinevleri">
+    <Key>
+      <PropertyRef Name="yayineviID" />
+    </Key>
+    <Property Name="yayineviID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="yayineviAdi" Type="varchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="Yazarlar">
+    <Key>
+      <PropertyRef Name="yazarID" />
+    </Key>
+    <Property Name="yazarID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Ad" Type="varchar" MaxLength="50" />
+    <Property Name="Soyad" Type="varchar" MaxLength="50" />
+    <Property Name="kitapID" Type="int" />
+  </EntityType>
+  <Association Name="FK_Kitaplar_Yayinevleri">
+    <End Role="Yayinevleri" Type="Self.Yayinevleri" Multiplicity="0..1" />
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yayinevleri">
+        <PropertyRef Name="yayineviID" />
+      </Principal>
+      <Dependent Role="Kitaplar">
+        <PropertyRef Name="yayineviID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yazarlar_Kitaplar">
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="0..1" />
+    <End Role="Yazarlar" Type="Self.Yazarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="kitapID" />
+      </Principal>
+      <Dependent Role="Yazarlar">
+        <PropertyRef Name="kitapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Db_YayineviYonetimiModelStoreContainer">
+    <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yayinevleri" EntityType="Self.Yayinevleri" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Yazarlar" EntityType="Self.Yazarlar" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_Kitaplar_Yayinevleri" Association="Self.FK_Kitaplar_Yayinevleri">
+      <End Role="Yayinevleri" EntitySet="Yayinevleri" />
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yazarlar_Kitaplar" Association="Self.FK_Yazarlar_Kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+      <End Role="Yazarlar" EntitySet="Yazarlar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

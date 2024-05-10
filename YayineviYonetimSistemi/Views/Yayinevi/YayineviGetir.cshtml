@@ -1,0 +1,21 @@
+﻿@model YayineviYonetimSistemi.Models.Entity.Yayinevleri
+@{
+    ViewBag.Title = "YayineviGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("YayineviGuncelle", "Yayinevi", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">       
+        <label>ID</label>
+        @Html.TextBoxFor(y=>y.yayineviID, new {@class="form-control"})
+        <br />        
+        <label>Yayınevi Adı</label>
+        @Html.TextBoxFor(y=>y.yayineviAdi, new {@class="form-control"})
+    </div>
+    <div>
+        <br />
+        <button class="btn btn-warning">Güncelle</button>
+    </div>
+}

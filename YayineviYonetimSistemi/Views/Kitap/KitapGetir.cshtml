@@ -1,0 +1,34 @@
+﻿@model YayineviYonetimSistemi.Models.Entity.Kitaplar
+
+@{
+    ViewBag.Title = "KitapGetir";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+@using (Html.BeginForm("KitapGuncelle", "Kitap", FormMethod.Post))
+{
+    <div style="margin-bottom:15px"></div>
+    <div class="form-group">
+        <div style="margin-bottom:15px">
+            <label>Kitap ID</label>
+            @Html.TextBoxFor(y => y.kitapID, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Başlık</label>
+            @Html.TextBoxFor(y => y.Baslik, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Fiyat</label>
+            @Html.TextBoxFor(y => y.Fiyat, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>ISBN</label>
+            @Html.TextBoxFor(y => y.ISBN, new { @class = "form-control" })
+        </div>
+        <div style="margin-bottom:15px">
+            <label>Yayınevi</label>
+            @Html.DropDownListFor(k => k.Yayinevleri.yayineviID, (List<SelectListItem>)ViewBag.dgr, new { @class = "form-control" })
+        </div>
+        <button class="btn btn-warning">Kitap Güncelle</button>
+    </div>
+}

@@ -1,0 +1,15 @@
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTest.TestAdapter.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.Interface.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.MSTestAdapter.PlatformServices.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.TestPlatform.AdapterUtilities.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\UnitTestProject.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\UnitTestProject.pdb
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.xml
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\bin\Debug\Microsoft.VisualStudio.TestPlatform.TestFramework.Extensions.xml
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\obj\Debug\UnitTestProject.csproj.AssemblyReference.cache
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\obj\Debug\UnitTestProject.csproj.CoreCompileInputs.cache
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\obj\Debug\UnitTest.294DD5B1.Up2Date
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\obj\Debug\UnitTestProject.dll
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\UnitTestProject\obj\Debug\UnitTestProject.pdb

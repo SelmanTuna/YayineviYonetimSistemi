@@ -1,0 +1,29 @@
+﻿@using YayineviYonetimSistemi.Models.Entity
+@model List<Yayinevleri>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<h2>Yayınevleri</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>Yayınevi ID</th>
+        <th>Yayınevi Adı</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var yev in Model)
+    {
+        <tr>
+            <td>@yev.yayineviID</td>
+            <td>@yev.yayineviAdi</td>
+            <td>@Html.ActionLink("Sil", "YayineviSil", new { id = yev.yayineviID }, new { @class = "btn btn-danger", onclick = "return confirm('Yayınevi Silinmek Üzere!')" })</td>
+            <td><a href="/Yayinevi/YayineviGetir/@yev.yayineviID" class="btn btn-success">Güncelle</a></td>            
+        </tr>        
+    }
+</table>
+<a href="/Yayinevi/YayineviEkle/" class="btn btn-primary">Yeni Yayınevi Ekle</a>
+
+

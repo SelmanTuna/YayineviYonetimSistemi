@@ -1,0 +1,42 @@
+﻿@using YayineviYonetimSistemi.Models.Entity
+@model List<Kitaplar>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+<br />
+<h2>Kitap Sayfası</h2>
+
+@using (Html.BeginForm("Index", "Kitap", FormMethod.Get))
+{
+    <div style="margin-bottom:15px; margin-top:15px;">
+        <b>Aranacak Yayınevi Adını Giriniz: &nbsp</b>@Html.TextBox("p")
+        <input type="submit" value="Ara" />
+    </div>
+}
+
+<table class="table table-bordered">
+    <tr>
+        <th>Kitap ID</th>
+        <th>Başlık</th>
+        <th>Fiyat</th>
+        <th>ISBN</th>
+        <th>Yayınevi</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var k in Model)
+    {
+        <tr>
+            <td>@k.kitapID</td>
+            <td>@k.Baslik</td>
+            <td>@k.Fiyat</td>
+            <td>@k.ISBN</td>
+            <td>@k.Yayinevleri.yayineviAdi</td>
+            <td><a href="/Kitap/KitapSil/@k.kitapID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Kitap/KitapGetir/@k.kitapID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+</table>
+<a href="/Kitap/KitapEkle/" class="btn btn-primary">Yeni Kitap Ekle</a>
+

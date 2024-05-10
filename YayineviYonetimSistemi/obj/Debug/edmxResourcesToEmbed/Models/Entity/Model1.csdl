@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Db_YayineviYonetimiModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Kitaplar">
+    <Key>
+      <PropertyRef Name="kitapID" />
+    </Key>
+    <Property Name="kitapID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Baslik" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Fiyat" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="ISBN" Type="Int32" />
+    <Property Name="yayineviID" Type="Int32" />
+    <NavigationProperty Name="Yayinevleri" Relationship="Self.FK_Kitaplar_Yayinevleri" FromRole="Kitaplar" ToRole="Yayinevleri" />
+    <NavigationProperty Name="Yazarlar" Relationship="Self.FK_Yazarlar_Kitaplar" FromRole="Kitaplar" ToRole="Yazarlar" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Yayinevleri">
+    <Key>
+      <PropertyRef Name="yayineviID" />
+    </Key>
+    <Property Name="yayineviID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="yayineviAdi" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="Kitaplar" Relationship="Self.FK_Kitaplar_Yayinevleri" FromRole="Yayinevleri" ToRole="Kitaplar" />
+  </EntityType>
+  <EntityType Name="Yazarlar">
+    <Key>
+      <PropertyRef Name="yazarID" />
+    </Key>
+    <Property Name="yazarID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Ad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="Soyad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="kitapID" Type="Int32" />
+    <NavigationProperty Name="Kitaplar" Relationship="Self.FK_Yazarlar_Kitaplar" FromRole="Yazarlar" ToRole="Kitaplar" />
+  </EntityType>
+  <Association Name="FK_Kitaplar_Yayinevleri">
+    <End Role="Yayinevleri" Type="Self.Yayinevleri" Multiplicity="0..1" />
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Yayinevleri">
+        <PropertyRef Name="yayineviID" />
+      </Principal>
+      <Dependent Role="Kitaplar">
+        <PropertyRef Name="yayineviID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Yazarlar_Kitaplar">
+    <End Role="Kitaplar" Type="Self.Kitaplar" Multiplicity="0..1" />
+    <End Role="Yazarlar" Type="Self.Yazarlar" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Kitaplar">
+        <PropertyRef Name="kitapID" />
+      </Principal>
+      <Dependent Role="Yazarlar">
+        <PropertyRef Name="kitapID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="Db_YayineviYonetimiEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Kitaplar" EntityType="Self.Kitaplar" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="Yayinevleri" EntityType="Self.Yayinevleri" />
+    <EntitySet Name="Yazarlar" EntityType="Self.Yazarlar" />
+    <AssociationSet Name="FK_Kitaplar_Yayinevleri" Association="Self.FK_Kitaplar_Yayinevleri">
+      <End Role="Yayinevleri" EntitySet="Yayinevleri" />
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Yazarlar_Kitaplar" Association="Self.FK_Yazarlar_Kitaplar">
+      <End Role="Kitaplar" EntitySet="Kitaplar" />
+      <End Role="Yazarlar" EntitySet="Yazarlar" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

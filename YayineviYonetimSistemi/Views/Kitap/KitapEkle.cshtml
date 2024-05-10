@@ -1,0 +1,30 @@
+﻿@model YayineviYonetimSistemi.Models.Entity.Kitaplar
+@{
+    ViewBag.Title = "KitapEkle";
+    Layout = "~/Views/Shared/Layout.cshtml";
+}
+
+<form class="form-group" method="post">
+    <div></div>
+    <div style="margin-top:15px">
+        <label>Kitap Adı</label>
+        @Html.TextBoxFor(k => k.Baslik, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Fiyat</label>
+        @Html.TextBoxFor(k => k.Fiyat, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>ISBN</label>
+        @Html.TextBoxFor(k => k.ISBN, new { @class = "form-control" })
+    </div>
+    <div style="margin-top:15px">
+        <label>Yayınevi</label>
+        @Html.DropDownListFor(k => k.Yayinevleri.yayineviID, (List<SelectListItem>)ViewBag.dgr, new {@class="form-control"})
+    </div>
+    <div style="margin-top:15px">
+        <button class="btn btn-info">Kitap Ekle</button>
+    </div>
+</form>
+
+
