@@ -1,0 +1,8 @@
+Row,yayıneviID,YayıneviAdi
+1,1,Everest Yayınları
+2,2,Yapı Kredi Yayınları
+3,3,Remzi Kitapevi
+4,4,Can Yayınları
+5,5,Yeditepe Yayınları
+6,8,İletişim Yayınları
+7,11,Epsilon Yayınları
