@@ -1,9 +1,9 @@
 Yayinevi Yönetim Sistemi Prototipi
 
-Eğitim Amaçlı Yazılmış bir projedir.
+Eğitim amaçlı yazılmış bir projedir.
 
-C#, CSS, JavaScript, HTML kullnılarak yazılmıştır.
+C#, CSS, JavaScript, HTML kullanılarak yazılmıştır.
 
-Asp.Net MVC Wep Application, EntityFramework ortamı kullanılarak proje geliştirilmiştir.
+.Net5.0 teknolojisi ve EntityFramework ortamı kullanılarak, Asp.Net MVC Wep Application,  projesi geliştirilmiştir.
 
-Veritabanı için MySql tercih edilmiştir.
+Veritabanı için MSSQL tercih edilmiştir.
