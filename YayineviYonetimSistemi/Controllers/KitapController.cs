@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using YayineviYonetimSistemi.Models.Entity;
+using YayineviYonetimSistemi.Services;
 
 namespace YayineviYonetimSistemi.Controllers
 {
@@ -11,6 +12,7 @@ namespace YayineviYonetimSistemi.Controllers
     {
         // GET: Kitap
         Db_YayineviYonetimiEntities db = new Db_YayineviYonetimiEntities();
+                
         public ActionResult Index(string p)
         {
             var kitaplar = from k in db.Kitaplar select k;

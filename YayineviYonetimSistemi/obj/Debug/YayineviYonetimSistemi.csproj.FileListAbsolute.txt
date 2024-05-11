@@ -89,3 +89,5 @@ C:\Users\Pointix\source\repos\YayineviYonetimSistemi\YayineviYonetimSistemi\bin\
 C:\Users\Pointix\source\repos\YayineviYonetimSistemi\YayineviYonetimSistemi\bin\System.Net.Http.Formatting.xml
 C:\Users\Pointix\source\repos\YayineviYonetimSistemi\YayineviYonetimSistemi\bin\System.Web.Http.xml
 C:\Users\Pointix\source\repos\YayineviYonetimSistemi\YayineviYonetimSistemi\bin\System.Web.Http.WebHost.xml
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\YayineviYonetimSistemi\obj\Debug\YayineviYonetimSistemi.Properties.Resources.resources
+C:\Users\Pointix\source\repos\YayineviYonetimSistemi\YayineviYonetimSistemi\obj\Debug\YayineviYonetimSistemi.csproj.GenerateResource.cache

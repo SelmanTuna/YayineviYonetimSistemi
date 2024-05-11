@@ -20,6 +20,10 @@
             <label>Yazar Soyadı</label>
             @Html.TextBoxFor(y => y.Soyad, new { @class = "form-control" })
         </div>
+        <div style="margin-bottom:15px">
+            <label>Kitap Adı</label>
+            @Html.TextBoxFor(y => y.Kitaplar.kitapID, new { @class = "form-control" })
+        </div>
         <button class="btn btn-warning">Yazar Güncelle</button>
     </div>
 }
